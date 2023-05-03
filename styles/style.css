@@ -1,0 +1,197 @@
+:root {
+    --background-colour: #ffecd1;
+    --ink-black: #001524;
+    --grey: #58A4B0;
+    --light-grey: rgba(88, 164, 176, 0.4);
+    --arrow-colour: #ffecd1;
+    --arrow-border: #001524;
+    --outline: #058ed9;
+}
+
+@font-face {
+    font-family: scribble;
+    src: url("../fonts/Rich\ Eatin\'.otf");
+}
+
+@font-face {
+    font-family: scribble-data;
+    src: url("../fonts/Mayin\'s\ Hand.ttf")
+}
+
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    max-height: min-content;
+    background-color: var(--background-colour);
+    color: var(--ink-black);
+    font-family: scribble;
+    font-size: 2rem;
+}
+
+.image-block {
+    position: relative;
+    width: 70%;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    object-fit: cover;
+    max-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.container-tall {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-tall > div {
+    width: 100%;
+}
+
+.banner-block,
+.signup-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.banner-block {
+    width: 40%;
+    font-size: 3rem;
+    gap: 2rem;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--light-grey);
+    width: calc(100% - 3rem);
+    padding: 1.5rem;
+}
+
+.sticky-notes {
+    width: 30vw;
+}
+
+.logo {
+    width: 20%;
+}
+
+.subtext {
+    font-size: 1.5rem;
+}
+
+.scroll-down {
+    font-size: 4rem;
+    color: var(--arrow-border);
+    animation: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.signup-block {
+    width: 60%;
+    background-color: var(--background-colour);
+    gap: 1rem;
+}
+
+.signup-pitch {
+    width: 60%;
+}
+
+.signup-form {
+    width: 70%;
+    background-color: var(--light-grey);
+}
+
+form {
+    min-width: 10rem;
+    max-width: 28.75rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.form-row {
+    position: relative;
+}
+
+.form-row input {
+    width: 100%;
+    background: none;
+    font-family: scribble-data;
+    font-size: 1.5rem;
+    border: none;
+    border-bottom: 1px solid var(--ink-black);
+}
+
+.form-row label {
+    position: absolute;
+    color: var(--ink-black);
+    font-size: 1rem;
+    pointer-events: none;
+    left: 0.5rem;
+    top: 0.5rem;
+    transition: 1s ease all;
+}
+
+input:focus {
+    outline: 1px solid var(--outline);
+    border-radius: 0.125rem;
+    box-shadow: 0 1rem 1.5rem var(--light-grey);
+}
+
+.form-row input:focus ~ label {
+    top: 0;
+    font-size: 0.75rem;
+    color: var(--grey)
+}
+
+button {
+    left: 1.5rem;
+    bottom: 2rem;
+    background: none;
+    border: none;
+    margin-bottom: 2px;
+}
+
+button:hover {
+    margin-bottom: 0;
+    border-bottom: 2px solid var(--ink-black);
+}
+
+.account-exists {
+    font-size: 1.25rem;
+}
+
+@keyframes bounce {
+    0% {
+        fill: var(--button-fill);
+        transform: translateY(0);
+    }
+    50% {
+        fill: var(--button-fill-2);
+        transform: translateY(2rem);
+    }
+    100% {
+        fill: var(--button-fill);
+        transform: translateY(0);
+    }
+}

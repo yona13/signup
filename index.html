@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <script src="https://kit.fontawesome.com/9c11ce4a9b.js" crossorigin="anonymous"></script>
+    <script src="./scripts/layout.js" defer></script>
+    <link href="./styles/normalise.css" rel="stylesheet">
+    <link href="./styles/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="image-block">
+        <img class="background" src="./images/red-book.jpg" alt="background" />
+    </div>
+    <div class="container">
+        <div class="banner-block">
+            <div class="banner">
+                <img class="logo" src="./images/notebook.png" alt="notebook" />
+                <a>Red Book</a>
+            </div>
+            <div class="messy-passwords">
+                <img class="sticky-notes" src="./images/passwords.png" alt="db" />
+            </div>
+            <div class="banner subtext">
+                <p>Need a password solution?</p>
+            </div>
+            <div class="scroll-down">
+                <i class="fa-solid fa-down-long"></i>
+            </div>
+        </div>
+        <div class="signup-block">
+            <div class="signup-pitch">
+                <p>Use Red Book to store and generate passwords for you, all you need to do is remember one password!</p>
+            </div>
+            <div class="signup-form">
+                <form action="#" method="post">
+                    <div class="form-row">
+                        <input type="text" id="first-name" />
+                        <label for="first-name">First Name</label>
+                    </div>
+
+                    <div class="form-row">
+                        <input type="text" id="last-name" />
+                        <label for="last-name">Last Name</label>
+                    </div>
+
+                    <div class="form-row">
+                        <input type="email" id="email" />
+                        <label for="email">Email</label>
+                    </div>
+
+                    <div class="form-row">
+                        <input type="tel" id="phone" />
+                        <label for="phone">Phone Number</label>
+                    </div>
+
+                    <div class="form-row">
+                        <input type="password" id="password" />
+                        <label for="password">Password</label>
+                    </div>
+
+                    <div class="form-row">
+                        <input type="password" id="confirm" />
+                        <label for="confirm">Confirm Password</label>
+                    </div>
+                </form>
+            </div>
+            <button class="setup" type="submit">Setup</button>
+            <div class="account-exists">
+                <span>Already have an account?</span>
+                <button>Login</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
