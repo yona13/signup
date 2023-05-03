@@ -6,25 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Page</title>
     <script src="https://kit.fontawesome.com/9c11ce4a9b.js" crossorigin="anonymous"></script>
-    <script src="./scripts/layout.js" defer></script>
-    <link href="./styles/normalise.css" rel="stylesheet">
-    <link href="./styles/style.css" rel="stylesheet">
+    <script src="./assets/js/layout.js" defer></script>
+    <script src="./assets/js/validate.js" defer></script>
+    <link href="./assets/css/normalise.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
 </head>
 <body>
     <div class="image-block">
-        <img class="background" src="./images/red-book.jpg" alt="background" />
+        <img class="background" src="./assets/images/red-book.jpg" alt="background" />
     </div>
     <div class="container">
         <div class="banner-block">
             <div class="banner">
-                <img class="logo" src="./images/notebook.png" alt="notebook" />
+                <img class="logo" src="./assets/images/notebook.png" alt="notebook" />
                 <a>Red Book</a>
-            </div>
-            <div class="messy-passwords">
-                <img class="sticky-notes" src="./images/passwords.png" alt="db" />
-            </div>
-            <div class="banner subtext">
-                <p>Need a password solution?</p>
             </div>
             <div class="scroll-down">
                 <i class="fa-solid fa-down-long"></i>
@@ -35,39 +30,33 @@
                 <p>Use Red Book to store and generate passwords for you, all you need to do is remember one password!</p>
             </div>
             <div class="signup-form">
-                <form action="#" method="post">
+                <form novalidate>
                     <div class="form-row">
-                        <input type="text" id="first-name" />
-                        <label for="first-name">First Name</label>
+                        <input type="text" id="username" minlength="4" required />
+                        <label for="username">Username</label>
+                        <span class="error username"></span>
                     </div>
 
                     <div class="form-row">
-                        <input type="text" id="last-name" />
-                        <label for="last-name">Last Name</label>
-                    </div>
-
-                    <div class="form-row">
-                        <input type="email" id="email" />
+                        <input type="email" id="email" required />
                         <label for="email">Email</label>
+                        <span class="error email"></span>
                     </div>
 
                     <div class="form-row">
-                        <input type="tel" id="phone" />
-                        <label for="phone">Phone Number</label>
-                    </div>
-
-                    <div class="form-row">
-                        <input type="password" id="password" />
+                        <input type="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required />
                         <label for="password">Password</label>
+                        <span class="error password"></span>
                     </div>
 
                     <div class="form-row">
-                        <input type="password" id="confirm" />
+                        <input type="password" id="confirm" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required />
                         <label for="confirm">Confirm Password</label>
+                        <span class="error confirm"></span>
                     </div>
                 </form>
+                <button class="setup">Setup</button>
             </div>
-            <button class="setup" type="submit">Setup</button>
             <div class="account-exists">
                 <span>Already have an account?</span>
                 <button>Login</button>
